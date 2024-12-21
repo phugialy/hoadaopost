@@ -104,33 +104,33 @@ body.dark-mode {
 }
 
 /* Table Styles */
+/* General Table Styling */
 table {
-    width: 100%;
+    width: 100%; /* Occupy full available width */
     border-collapse: collapse;
-    font-size: 0.9rem; /* Slightly smaller text size */
+    font-size: 1rem; /* Larger text for better readability */
     text-align: left;
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 /* Table Headers and Cells */
 th, td {
-    padding: 12px 15px;
-    border: 1px solid #ddd; /* Table borders */
+    padding: 16px 20px; /* Increase cell padding for more space */
+    border: 1px solid #ddd;
     text-align: left;
-    vertical-align: middle; /* Vertically center text */
-    word-wrap: break-word; /* Wrap text to prevent overflow */
-    word-break: break-word; /* Break long words if needed */
-    white-space: normal; /* Allow multi-line text */
+    vertical-align: middle;
+    word-wrap: break-word;
+    white-space: normal; /* Allow text wrapping */
+    font-size: 1.1rem; /* Larger text size */
 }
-
-/* Table Header Row */
+/* Table Headers */
 th {
-    background-color: #f5a623;
+    background-color: #f5a623; /* Orange theme */
     color: white;
     font-weight: bold;
+    font-size: 1.2rem; /* Larger header font */
 }
 
 /* Table Rows */
@@ -145,7 +145,31 @@ tr:nth-child(even) td {
 tr:hover td {
     background-color: #f5f5f5;
 }
+/* Responsive Design for Table */
+@media (max-width: 768px) {
+    table {
+        font-size: 1.2rem; /* Larger text for mobile */
+        margin: 0 auto; /* Center table on the screen */
+    }
 
+    th, td {
+        padding: 20px; /* Increase padding on mobile */
+        font-size: 1.3rem; /* Make text larger for better visibility */
+    }
+
+    .table-container {
+        margin: 20px auto;
+        max-width: 95%; /* Reduce margin for mobile */
+        overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+        padding: 15px; /* Add spacing around the table */
+    }
+    
+}
+/* Adjust Button Sizing */
+.nav-button, .copyable-cell {
+    font-size: 1rem; /* Increase button and cell font size */
+    padding: 10px 15px; /* Increase button padding */
+}
 /* Button Styling for Navigate Links */
 .nav-button {
     background-color: #007bff; /* Blue color for button */
@@ -228,4 +252,63 @@ tr:hover td {
 tr.highlight-row td {
     background-color: #4caf50 !important; /* Force green for the entire row */
     color: #fff !important; /* Force white text */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    /* Header Adjustments */
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+        height: auto; /* Adjust height dynamically */
+        padding: 10px; /* Add padding for smaller screens */
+    }
+
+    .header-left, .header-center, .header-right {
+        max-width: 100%; /* Allow full width for each section */
+        justify-content: center; /* Center items horizontally */
+    }
+
+    .header-logo {
+        height: 60px; /* Smaller logo size */
+        max-height: 60px;
+    }
+
+    .header-text {
+        font-size: 1.5rem; /* Smaller text size */
+        text-align: center; /* Center-align the title */
+    }
+
+    /* Table Adjustments */
+    .table-container {
+        overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+    }
+
+    table {
+        font-size: 0.8rem; /* Reduce table font size */
+    }
+
+    th, td {
+        padding: 8px; /* Adjust cell padding */
+    }
+
+    /* Button Adjustments */
+    .nav-button, .copyable-cell {
+        font-size: 0.8rem; /* Reduce button and cell text size */
+    }
+
+    .nav-button {
+        padding: 6px 8px; /* Smaller button size */
+    }
+
+    /* Copy Toast Notification */
+    .copy-toast {
+        font-size: 0.8rem; /* Smaller notification text */
+        padding: 8px 16px; /* Adjust padding */
+    }
+}
+.table-container {
+    margin: 20px auto;
+    max-width: 95%; /* Reduce margin for mobile */
+    overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+    padding: 10px; /* Add spacing around the table */
 }

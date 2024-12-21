@@ -1,12 +1,11 @@
 /* General Header Styles */
 .header {
     display: flex;
-    justify-content: space-between; /* Spread sections evenly */
+    justify-content: space-between;
     align-items: center;
     background-color: #f5a623; /* Header background */
     color: white;
-    height: 150px; /* Adjusted height for balanced scaling */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 150px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -17,28 +16,23 @@
 .header-left {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between logo and text */
-    flex: 1; /* Adjusts to 1/3 of the screen width */
-    max-width: 33%; /* Limits to 1/3 of the screen */
+    gap: 10px;
+    flex: 1;
+    max-width: 33%;
 }
 
 .header-logo {
-    height: auto; /* Automatically adjusts height */
-    max-height: 140px; /* Scales to fit inside header */
+    height: auto;
+    max-height: 140px;
     width: auto;
-    flex-shrink: 0; /* Prevent shrinking of the logo */
+    flex-shrink: 0;
 }
 
 .header-text {
-    font-size: 2.8vw; /* Scales dynamically to the screen width */
+    font-size: 2.8vw;
     font-weight: bold;
     color: white;
-    flex-shrink: 1; /* Allow text to shrink if needed */
-}
-
-/* Center Section: Empty Space */
-.header-center {
-    flex: 1; /* Occupies remaining space for symmetry */
+    flex-shrink: 1;
 }
 
 /* Right Section: Dark Mode Button */
@@ -50,12 +44,10 @@
 .dark-mode-toggle {
     background-color: white;
     border: none;
-    border-radius: 12px; /* Rounded rectangle */
-    font-size: 1rem; /* Font size */
-    font-weight: bold;
+    border-radius: 12px;
+    font-size: 1rem;
     color: black;
     cursor: pointer;
-    transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -66,4 +58,30 @@
 
 .dark-mode-toggle:active {
     transform: scale(0.95);
+}
+/* Mobile-Responsive Header */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: center; /* Center all items */
+        text-align: center;
+    }
+
+    .header-left, .header-center, .header-right {
+        max-width: 100%; /* Full width for each section */
+    }
+
+    .header-logo {
+        height: 50px; /* Smaller logo size */
+        max-height: 50px;
+    }
+
+    .header-text {
+        font-size: 1.2rem; /* Smaller title size */
+        margin-top: 5px;
+    }
+
+    .dark-mode-toggle {
+        margin-top: 10px; /* Add spacing for better layout */
+    }
 }
