@@ -3,7 +3,7 @@ import Header from './components/Header';
 import './styles/App.css';
 
 const App = () => {
-    const [darkMode, setDarkMode] = useState(false); // Dark mode state
+    const [darkMode, setDarkMode] = useState(false);
     const [tableData, setTableData] = useState([]);
     const [copyMessage, setCopyMessage] = useState('');
     const [currentDate, setCurrentDate] = useState('');
@@ -16,14 +16,11 @@ const App = () => {
     };
 
     useEffect(() => {
-        // Set initial theme
-        const initialMode = darkMode ? 'dark-mode' : 'light-mode';
-        document.body.className = initialMode;
-
-        // Fetch data from the backend
+        // Fetch data from the backend using the URL from .env
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/data');
+                const API_URL = process.env.REACT_APP_BACKEND_URL; // Fetch backend URL
+                const response = await fetch(`${API_URL}/api/data`);
                 const result = await response.json();
                 setTableData(result.data);
             } catch (error) {
@@ -126,6 +123,7 @@ const App = () => {
                                             )}
                                             {row.map((cell, cellIndex) => {
                                                 if (cellIndex === 2) {
+                                                    // Copyable Address
                                                     return (
                                                         <td
                                                             key={cellIndex}
@@ -138,13 +136,14 @@ const App = () => {
                                                     );
                                                 }
                                                 if (cellIndex === row.length - 1) {
+                                                    // Navigation Button
                                                     return (
                                                         <td key={cellIndex}>
                                                             <button
                                                                 className="nav-button"
                                                                 onClick={() =>
                                                                     window.open(
-                                                                        `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                                                                        `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
                                                                             row[2]
                                                                         )}`,
                                                                         '_blank'

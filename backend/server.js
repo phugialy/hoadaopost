@@ -6,7 +6,15 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+// Configure CORS to allow specific origins
+app.use(cors({
+    origin: [
+        'http://localhost:3000', // Allow your local frontend
+        'https://your-frontend.vercel.app' // Add your deployed frontend URL here
+    ],
+    methods: ['GET', 'POST'],
+    credentials: true // If you need to send cookies or other credentials
+}));
 app.use(express.json());
 
 // Google Sheets setup
