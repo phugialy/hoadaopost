@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f5a623; /* Header background */
+    background-color: #f5a623;
     color: white;
     height: 150px;
     position: fixed;
@@ -12,76 +12,62 @@
     z-index: 1000;
 }
 
-/* Left Section: Logo and Text */
-.header-left {
+/* Social Buttons Section */
+.social-buttons {
     display: flex;
+    justify-content: center; /* Center buttons */
     align-items: center;
-    gap: 10px;
-    flex: 1;
-    max-width: 33%;
+    gap: 15px; /* Space between buttons */
+    flex: 1; /* Take up space equally */
 }
 
-.header-logo {
-    height: auto;
-    max-height: 140px;
-    width: auto;
-    flex-shrink: 0;
-}
-
-.header-text {
-    font-size: 2.8vw;
-    font-weight: bold;
-    color: white;
-    flex-shrink: 1;
-}
-
-/* Right Section: Dark Mode Button */
-.header-right {
+/* Social Button Styling */
+.social-button {
     display: flex;
+    justify-content: center;
     align-items: center;
-}
-
-.dark-mode-toggle {
-    background-color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 1rem;
-    color: black;
+    width: 40px;
+    height: 40px;
+    background-color: white; /* White background for buttons */
+    border-radius: 50%; /* Circular buttons */
+    color: #3b5998; /* Default Facebook blue */
+    font-size: 20px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
-.dark-mode-toggle:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.05);
+.social-button.facebook:hover {
+    background-color: #3b5998; /* Blue background on hover */
+    color: white; /* White icon */
 }
 
-.dark-mode-toggle:active {
-    transform: scale(0.95);
+.social-button.instagram {
+    color: #e4405f;
 }
-/* Mobile-Responsive Header */
+
+.social-button.instagram:hover {
+    background-color: #e4405f;
+    color: white;
+}
+
+.social-button.share {
+    color: #4caf50;
+}
+
+.social-button.share:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Adjust for Mobile */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column; /* Stack header elements vertically */
-        align-items: center; /* Center all items */
-        text-align: center;
-    }
-
-    .header-left, .header-center, .header-right {
-        max-width: 100%; /* Full width for each section */
-    }
-
-    .header-logo {
-        height: 50px; /* Smaller logo size */
-        max-height: 50px;
-    }
-
-    .header-text {
-        font-size: 1.2rem; /* Smaller title size */
-        margin-top: 5px;
-    }
-
-    .dark-mode-toggle {
-        margin-top: 10px; /* Add spacing for better layout */
+    .social-buttons {
+        position: absolute;
+        top: 50%; /* Move buttons to the middle of the screen */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        flex-direction: row;
+        gap: 10px; /* Smaller gaps */
     }
 }

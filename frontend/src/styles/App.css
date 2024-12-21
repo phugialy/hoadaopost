@@ -8,9 +8,81 @@ main {
 /* Default Light Mode */
 body.light-mode {
     background-color: #ffffff;
-    color: #000000;
+    color: #000000; /* Black text for readability */
 }
 
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #000000; /* Text remains black */
+}
+
+/* Table Styling for Light and Dark Modes */
+.table-container table {
+    background-color: white; /* Ensure table background stays white */
+    color: black; /* Ensure table text stays black */
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Table Header */
+.table-container th {
+    background-color: #f5a623; /* Match header styling */
+    color: white; /* Keep header text white */
+}
+
+/* Table Data Cells */
+.table-container td {
+    background-color: #ffffff; /* Keep rows white */
+    color: black; /* Text remains black in all modes */
+    padding: 12px 15px;
+    border: 1px solid #ddd; /* Add borders for better visibility */
+}
+
+/* Alternating Row Background for Light Mode */
+.table-container tr:nth-child(even) td {
+    background-color: #f9f9f9; /* Subtle light gray for even rows */
+}
+
+.table-container tr:nth-child(odd) td {
+    background-color: #ffffff; /* White for odd rows */
+}
+
+/* Hover Effect */
+.table-container tr:hover td {
+    background-color: #e6e6e6; /* Slight hover effect */
+}
+
+/* Highlight Entire Row for Active Event */
+.highlight-row {
+    background-color: #4caf50; /* Green background for active events */
+    font-weight: bold;
+    color: white; /* White text for better visibility on green */
+}
+
+/* Highlight Date Cell Only for Today's Date */
+.highlight-date-cell {
+    background-color: #a5d6a7; /* Light green background for today's date */
+    font-weight: bold;
+    color: black; /* Text stays black */
+}
+
+/* Dark Mode Specific Adjustments */
+body.dark-mode .table-container table {
+    background-color: white; /* Keep table background white */
+    color: black; /* Ensure all text in the table stays black */
+}
+
+body.dark-mode .table-container th {
+    background-color: #444444; /* Dark header background for dark mode */
+    color: white; /* Header text remains white */
+}
+
+body.dark-mode .table-container td {
+    background-color: white; /* Ensure data rows stay white */
+    color: black; /* Ensure text remains black */
+}
 /* Header Styles */
 header {
     display: flex;
