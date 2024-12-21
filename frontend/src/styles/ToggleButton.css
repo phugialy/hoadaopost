@@ -1,0 +1,15 @@
+.toggle-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: none;
+    color: inherit;
+}
+
+.toggle-button:hover {
+    transform: scale(1.1);
+}

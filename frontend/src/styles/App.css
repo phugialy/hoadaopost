@@ -1,0 +1,231 @@
+/* General App Styling */
+main {
+    text-align: center;
+    padding: 20px;
+    margin-top: 140px; /* Ensure content starts below the header */
+    font-size: 1.1rem; /* Adjust text size for better readability */
+}
+/* Default Light Mode */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align logo on the left, button on the right */
+    padding: 10px 20px;
+    background-color: #f8c146; /* Header background color */
+    color: #fff; /* Header text color */
+    width: 100%; /* Ensure full width */
+    position: sticky; /* Stick header at the top */
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo/Title on the left, button on the right */
+    padding: 8px 15px; /* Reduced padding for a cleaner layout */
+    background-color: #f8c146; /* Orange header background consistent with the table */
+    color: #ffffff; /* White text for contrast */
+    position: sticky; /* Stick to the top of the page */
+    top: 0;
+    width: 100%; /* Full width across the viewport */
+    z-index: 1000; /* Ensure header stays on top */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-sizing: border-box; /* Include padding in the header dimensions */
+}
+
+/* Header Content */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Center content when the screen is wider */
+    margin: 0 auto; /* Center content horizontally */
+    box-sizing: border-box; /* Include padding/border in width */
+}
+
+/* Logo Styling */
+.header-logo {
+    margin-right: 15px; /* Space between logo and title */
+    height: 130px; /* Increased logo height to 130px */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Title Styling */
+.header-title {
+    font-size: 2rem; /* Slightly larger for emphasis */
+    font-weight: bold;
+    color: inherit; /* Match text color with the header */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    padding: 6px 10px; /* Smaller padding for a compact look */
+    border: 1px solid #ffffff; /* White border for contrast */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #ffffff; /* Button background color */
+    color: #000; /* Button text color */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
+}
+
+body.dark-mode .theme-toggle {
+    background-color: #444444; /* Dark button background */
+    color: #ffffff; /* Button text for dark mode */
+    border-color: #666666; /* Darker border */
+}
+
+/* Adjust Table Header and Body Color to Match Orange Theme */
+body.light-mode {
+    background-color: #ffffff; /* White body background for light mode */
+    color: #000000; /* Black text for readability */
+}
+
+body.dark-mode {
+    background-color: #121212; /* Dark gray body background for dark mode */
+    color: #ffffff; /* White text for readability */
+}
+
+/* Table Container */
+.table-container {
+    margin: 20px auto;
+    max-width: 90%;
+    overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem; /* Slightly smaller text size */
+    text-align: left;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Headers and Cells */
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd; /* Table borders */
+    text-align: left;
+    vertical-align: middle; /* Vertically center text */
+    word-wrap: break-word; /* Wrap text to prevent overflow */
+    word-break: break-word; /* Break long words if needed */
+    white-space: normal; /* Allow multi-line text */
+}
+
+/* Table Header Row */
+th {
+    background-color: #f5a623;
+    color: white;
+    font-weight: bold;
+}
+
+/* Table Rows */
+td {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+
+tr:hover td {
+    background-color: #f5f5f5;
+}
+
+/* Button Styling for Navigate Links */
+.nav-button {
+    background-color: #007bff; /* Blue color for button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.nav-button:active {
+    background-color: #004085; /* Even darker blue when active */
+}
+/* Copyable Address Cell */
+.copyable-cell {
+    cursor: pointer;
+    background-color: #f9f9f9; /* Default background */
+    transition: background-color 0.3s ease;
+}
+
+.copyable-cell:hover {
+    background-color: #d9f7be; /* Light green background on hover */
+}
+
+.copyable-cell:active {
+    background-color: #a0d911; /* Darker green background when clicked */
+}
+
+/* Copy Toast Notification */
+.copy-toast {
+    position: fixed;
+    top: 80px; /* Below the header */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0.9;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header .logo img {
+        height: 50px;
+        width: 50px;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+}
+/* Highlight Entire Row for Active Event */
+.highlight-row {
+    background-color: #4caf50; /* Green background for active events */
+    font-weight: bold; /* Bold text */
+    color: #fff; /* White text for contrast */
+}
+
+/* Highlight Date Cell Only for Today's Date (when no event is active) */
+.highlight-date-cell {
+    background-color: #a5d6a7; /* Light green background for today's date */
+    font-weight: bold;
+    color: #000;
+}
+
+/* Ensure row highlight takes precedence */
+tr.highlight-row td {
+    background-color: #4caf50 !important; /* Force green for the entire row */
+    color: #fff !important; /* Force white text */
+}

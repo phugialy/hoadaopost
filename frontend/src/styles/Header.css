@@ -1,0 +1,69 @@
+/* General Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between; /* Spread sections evenly */
+    align-items: center;
+    background-color: #f5a623; /* Header background */
+    color: white;
+    height: 150px; /* Adjusted height for balanced scaling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Left Section: Logo and Text */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
+    flex: 1; /* Adjusts to 1/3 of the screen width */
+    max-width: 33%; /* Limits to 1/3 of the screen */
+}
+
+.header-logo {
+    height: auto; /* Automatically adjusts height */
+    max-height: 140px; /* Scales to fit inside header */
+    width: auto;
+    flex-shrink: 0; /* Prevent shrinking of the logo */
+}
+
+.header-text {
+    font-size: 2.8vw; /* Scales dynamically to the screen width */
+    font-weight: bold;
+    color: white;
+    flex-shrink: 1; /* Allow text to shrink if needed */
+}
+
+/* Center Section: Empty Space */
+.header-center {
+    flex: 1; /* Occupies remaining space for symmetry */
+}
+
+/* Right Section: Dark Mode Button */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode-toggle {
+    background-color: white;
+    border: none;
+    border-radius: 12px; /* Rounded rectangle */
+    font-size: 1rem; /* Font size */
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode-toggle:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.dark-mode-toggle:active {
+    transform: scale(0.95);
+}
