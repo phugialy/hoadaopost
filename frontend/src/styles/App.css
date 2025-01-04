@@ -3,346 +3,36 @@ main {
     text-align: center;
     padding: 20px;
     margin-top: 140px; /* Ensure content starts below the header */
-    font-size: 1.1rem; /* Adjust text size for better readability */
+    font-size: 1.1rem;
 }
-/* Default Light Mode */
+
+/* Light and Dark Modes */
 body.light-mode {
     background-color: #ffffff;
-    color: #000000; /* Black text for readability */
+    color: #000000; /* Black text */
 }
 
-/* Dark Mode */
 body.dark-mode {
     background-color: #121212;
-    color: #000000; /* Text remains black */
+    color: #e0e0e0; /* Light gray text */
 }
 
-/* Table Styling for Light and Dark Modes */
-.table-container table {
-    background-color: white; /* Ensure table background stays white */
-    color: black; /* Ensure table text stays black */
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 20px;
-}
-
-/* Table Header */
-.table-container th {
-    background-color: #f5a623; /* Match header styling */
-    color: white; /* Keep header text white */
-}
-
-/* Table Data Cells */
-.table-container td {
-    background-color: #ffffff; /* Keep rows white */
-    color: black; /* Text remains black in all modes */
-    padding: 12px 15px;
-    border: 1px solid #ddd; /* Add borders for better visibility */
-}
-
-/* Alternating Row Background for Light Mode */
-.table-container tr:nth-child(even) td {
-    background-color: #f9f9f9; /* Subtle light gray for even rows */
-}
-
-.table-container tr:nth-child(odd) td {
-    background-color: #ffffff; /* White for odd rows */
-}
-
-/* Hover Effect */
-.table-container tr:hover td {
-    background-color: #e6e6e6; /* Slight hover effect */
-}
-
-/* Highlight Entire Row for Active Event */
-.highlight-row {
-    background-color: #4caf50; /* Green background for active events */
-    font-weight: bold;
-    color: white; /* White text for better visibility on green */
-}
-
-/* Highlight Date Cell Only for Today's Date */
-.highlight-date-cell {
-    background-color: #a5d6a7; /* Light green background for today's date */
-    font-weight: bold;
-    color: black; /* Text stays black */
-}
-
-/* Dark Mode Specific Adjustments */
-body.dark-mode .table-container table {
-    background-color: white; /* Keep table background white */
-    color: black; /* Ensure all text in the table stays black */
-}
-
-body.dark-mode .table-container th {
-    background-color: #444444; /* Dark header background for dark mode */
-    color: white; /* Header text remains white */
-}
-
-body.dark-mode .table-container td {
-    background-color: white; /* Ensure data rows stay white */
-    color: black; /* Ensure text remains black */
-}
 /* Header Styles */
 header {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Align logo on the left, button on the right */
-    padding: 10px 20px;
-    background-color: #f8c146; /* Header background color */
-    color: #fff; /* Header text color */
-    width: 100%; /* Ensure full width */
-    position: sticky; /* Stick header at the top */
-    top: 0;
-    z-index: 1000;
-    box-sizing: border-box; /* Include padding in width calculation */
-}
-
-/* Header Styling */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Logo/Title on the left, button on the right */
-    padding: 8px 15px; /* Reduced padding for a cleaner layout */
-    background-color: #f8c146; /* Orange header background consistent with the table */
-    color: #ffffff; /* White text for contrast */
-    position: sticky; /* Stick to the top of the page */
-    top: 0;
-    width: 100%; /* Full width across the viewport */
-    z-index: 1000; /* Ensure header stays on top */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    box-sizing: border-box; /* Include padding in the header dimensions */
-}
-
-/* Header Content */
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px; /* Center content when the screen is wider */
-    margin: 0 auto; /* Center content horizontally */
-    box-sizing: border-box; /* Include padding/border in width */
-}
-
-/* Logo Styling */
-.header-logo {
-    margin-right: 15px; /* Space between logo and title */
-    height: 130px; /* Increased logo height to 130px */
-    width: auto; /* Maintain aspect ratio */
-}
-
-/* Title Styling */
-.header-title {
-    font-size: 2rem; /* Slightly larger for emphasis */
-    font-weight: bold;
-    color: inherit; /* Match text color with the header */
-    white-space: nowrap; /* Prevent text wrapping */
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-    padding: 6px 10px; /* Smaller padding for a compact look */
-    border: 1px solid #ffffff; /* White border for contrast */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #ffffff; /* Button background color */
-    color: #000; /* Button text color */
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
-}
-
-body.dark-mode .theme-toggle {
-    background-color: #444444; /* Dark button background */
-    color: #ffffff; /* Button text for dark mode */
-    border-color: #666666; /* Darker border */
-}
-
-/* Adjust Table Header and Body Color to Match Orange Theme */
-body.light-mode {
-    background-color: #ffffff; /* White body background for light mode */
-    color: #000000; /* Black text for readability */
-}
-
-body.dark-mode {
-    background-color: #121212; /* Dark gray body background for dark mode */
-    color: #ffffff; /* White text for readability */
-}
-
-/* Table Container */
-.table-container {
-    margin: 20px auto;
-    max-width: 90%;
-    overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
-}
-
-/* Table Styles */
-/* General Table Styling */
-table {
-    width: 100%; /* Occupy full available width */
-    border-collapse: collapse;
-    font-size: 1rem; /* Larger text for better readability */
-    text-align: left;
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-/* Table Headers and Cells */
-th, td {
-    padding: 16px 20px; /* Increase cell padding for more space */
-    border: 1px solid #ddd;
-    text-align: left;
-    vertical-align: middle;
-    word-wrap: break-word;
-    white-space: normal; /* Allow text wrapping */
-    font-size: 1.1rem; /* Larger text size */
-}
-/* Table Headers */
-th {
-    background-color: #f5a623; /* Orange theme */
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem; /* Larger header font */
-}
-
-/* Table Rows */
-td {
-    background-color: #f9f9f9;
-}
-
-tr:nth-child(even) td {
-    background-color: #f1f1f1;
-}
-
-tr:hover td {
-    background-color: #f5f5f5;
-}
-/* Responsive Design for Table */
-@media (max-width: 768px) {
-    table {
-        font-size: 1.2rem; /* Larger text for mobile */
-        margin: 0 auto; /* Center table on the screen */
-    }
-
-    th, td {
-        padding: 20px; /* Increase padding on mobile */
-        font-size: 1.3rem; /* Make text larger for better visibility */
-    }
-
-    .table-container {
-        margin: 20px auto;
-        max-width: 95%; /* Reduce margin for mobile */
-        overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
-        padding: 15px; /* Add spacing around the table */
-    }
-    
-}
-/* Adjust Button Sizing */
-.nav-button, .copyable-cell {
-    font-size: 1rem; /* Increase button and cell font size */
-    padding: 10px 15px; /* Increase button padding */
-}
-/* Button Styling for Navigate Links */
-.nav-button {
-    background-color: #007bff; /* Blue color for button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-}
-
-.nav-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-.nav-button:active {
-    background-color: #004085; /* Even darker blue when active */
-}
-/* Copyable Address Cell */
-.copyable-cell {
-    cursor: pointer;
-    background-color: #f9f9f9; /* Default background */
-    transition: background-color 0.3s ease;
-}
-
-.copyable-cell:hover {
-    background-color: #d9f7be; /* Light green background on hover */
-}
-
-.copyable-cell:active {
-    background-color: #a0d911; /* Darker green background when clicked */
-}
-
-/* Copy Toast Notification */
-.copy-toast {
-    position: fixed;
-    top: 80px; /* Below the header */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    opacity: 0.9;
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header .logo img {
-        height: 50px;
-        width: 50px;
-    }
-
-    table {
-        font-size: 0.9rem;
-    }
-}
-/* Highlight Entire Row for Active Event */
-.highlight-row {
-    background-color: #4caf50; /* Green background for active events */
-    font-weight: bold; /* Bold text */
-    color: #fff; /* White text for contrast */
-}
-
-/* Highlight Date Cell Only for Today's Date (when no event is active) */
-.highlight-date-cell {
-    background-color: #a5d6a7; /* Light green background for today's date */
-    font-weight: bold;
-    color: #000;
-}
-
-/* Ensure row highlight takes precedence */
-tr.highlight-row td {
-    background-color: #4caf50 !important; /* Force green for the entire row */
-    color: #fff !important; /* Force white text */
-}
-
-/* General Header Styles */
-header {
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f5a623;
+    padding: 10px 20px;
+    background-color: #f8c146; /* Same for both themes */
     color: white;
-    height: auto; /* Dynamic height for flexible content */
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    padding: 10px 20px;
 }
 
-/* Header Left Section (Logo) */
 .header-left {
     display: flex;
     align-items: center;
@@ -350,59 +40,23 @@ header {
 }
 
 .header-logo {
-    height: 100px; /* Logo size for desktop */
-    width: auto; /* Maintain aspect ratio */
+    height: 100px;
+    width: auto;
 }
 
 .header-title {
     font-size: 2rem;
     font-weight: bold;
-    color: white;
     white-space: nowrap;
 }
 
-/* Header Right Section (Buttons) */
 .header-right {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* Social Buttons Section */
-.social-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-/* Social Button Styling */
-.social-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.social-button.facebook {
-    color: #3b5998;
-}
-
-.social-button.instagram {
-    color: #e4405f;
-}
-
-.social-button.share {
-    color: #4caf50;
-}
-
-/* Dark Mode Button */
+/* Dark Mode Toggle Button */
 .dark-mode-toggle {
     background-color: #ffffff;
     border: none;
@@ -420,48 +74,187 @@ body.dark-mode .dark-mode-toggle {
     color: #ffffff;
 }
 
+/* Table Container */
+.table-container {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    text-align: left;
+}
+
+/* Table Headers and Cells */
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    vertical-align: middle;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+th {
+    background-color: #f5a623;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+body.dark-mode th {
+    background-color: #444444; /* Dark header background */
+    color: #ffffff; /* White text */
+}
+
+td {
+    background-color: #f9f9f9;
+    color: #000000;
+}
+
+body.dark-mode td {
+    background-color: #333333; /* Darker background for cells */
+    color: #e0e0e0; /* Light text */
+}
+
+/* Alternating Row Colors */
+tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+
+body.dark-mode tr:nth-child(even) td {
+    background-color: #2a2a2a; /* Subtle dark gray for even rows */
+}
+
+tr:hover td {
+    background-color: #f5f5f5;
+}
+
+body.dark-mode tr:hover td {
+    background-color: #444444; /* Slightly darker hover in dark mode */
+}
+
+/* Highlight Active Rows */
+.highlight-row {
+    background-color: #4caf50;
+    font-weight: bold;
+    color: white;
+}
+
+body.dark-mode .highlight-row {
+    background-color: #66bb6a; /* Lighter green for better contrast */
+    color: white;
+}
+
+/* Highlight Today's Date */
+.highlight-date-cell {
+    background-color: #a5d6a7;
+    font-weight: bold;
+    color: black;
+}
+
+body.dark-mode .highlight-date-cell {
+    background-color: #81c784;
+    color: #000000; /* Ensure contrast */
+}
+
+/* Buttons */
+.nav-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+}
+
+.nav-button:active {
+    background-color: #004085;
+}
+
+body.dark-mode .nav-button {
+    background-color: #0056b3; /* Slightly darker for dark mode */
+    color: #ffffff;
+}
+
+body.dark-mode .nav-button:hover {
+    background-color: #003f7f; /* Adjust hover for better contrast */
+}
+
+/* Copyable Cell */
+.copyable-cell {
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+.copyable-cell:hover {
+    background-color: #d9f7be;
+}
+
+body.dark-mode .copyable-cell {
+    background-color: #333333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .copyable-cell:hover {
+    background-color: #4caf50;
+}
+
+/* Copy Toast */
+.copy-toast {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0.9;
+}
+
+body.dark-mode .copy-toast {
+    background-color: #66bb6a;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack all items vertically */
+        flex-direction: column;
         align-items: center;
-        padding: 2px;
-    }
-
-    .header-left {
-        justify-content: center; /* Center the logo */
-        margin-bottom: 20px; /* Add spacing below the logo */
+        padding: 10px;
     }
 
     .header-logo {
-        height: 60px; /* Adjust logo size for mobile */
-        max-height: 60px;
+        height: 60px;
     }
 
     .header-title {
-        font-size: 2.0rem; /* Adjust title size for mobile */
+        font-size: 1.5rem;
     }
 
-    .social-buttons {
-        flex-direction: row; /* Arrange buttons horizontally */
-        justify-content: center;
-        margin-bottom: 5px; /* Add spacing below social buttons */
-    }
-
-    .social-button {
-        width: 22px; /* Smaller button size for mobile */
-        height: 22px;
-        font-size: 13px;
-    }
-
-    .dark-mode-toggle {
-        margin-top: 5px; /* Add spacing above the dark mode toggle */
+    th, td {
+        font-size: 0.9rem;
     }
 }
 
-.table-container {
-    margin: 10px auto;
-    max-width: 85%; /* Reduce margin for mobile */
-    overflow-x: auto; /* Enable horizontal scrolling for smaller screens */
-    padding: 5px; /* Add spacing around the table */
+@media (max-width: 480px) {
+    th, td {
+        font-size: 0.8rem;
+    }
 }

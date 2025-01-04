@@ -9,8 +9,9 @@ const App = () => {
     const [currentDate, setCurrentDate] = useState('');
     const [currentTime, setCurrentTime] = useState('');
 
+    // Toggle theme between dark and light modes
     const toggleTheme = () => {
-        setDarkMode(!darkMode);
+        setDarkMode((prevMode) => !prevMode);
         const newMode = darkMode ? 'light-mode' : 'dark-mode';
         document.body.className = newMode;
     };
@@ -19,7 +20,7 @@ const App = () => {
         // Fetch data from the backend using the URL from .env
         const fetchData = async () => {
             try {
-                const API_URL = process.env.REACT_APP_BACKEND_URL; // Fetch backend URL
+                const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
                 const response = await fetch(`${API_URL}/api/data`);
                 const result = await response.json();
                 setTableData(result.data);
@@ -32,8 +33,7 @@ const App = () => {
 
         // Set today's date
         const today = new Date();
-        const formattedDate = today.toISOString().split('T')[0];
-        setCurrentDate(formattedDate);
+        setCurrentDate(today.toISOString().split('T')[0]);
 
         // Update current time dynamically
         const updateCurrentTime = () => {
@@ -44,12 +44,16 @@ const App = () => {
             setCurrentTime(time);
         };
 
-        updateCurrentTime(); // Initial update
+        updateCurrentTime(); // Initial time update
         const interval = setInterval(updateCurrentTime, 1000);
 
-        return () => clearInterval(interval); // Cleanup
+        // Cleanup function
+        return () => {
+            clearInterval(interval);
+        };
     }, []);
 
+    // Handle copying text to clipboard
     const handleCopy = (text) => {
         navigator.clipboard.writeText(text).then(() => {
             setCopyMessage(`Copied: ${text}`);
@@ -57,6 +61,7 @@ const App = () => {
         });
     };
 
+    // Group table rows by date
     const groupRowsByDate = (rows) => {
         const groupedRows = [];
         let lastDate = null;
@@ -76,6 +81,7 @@ const App = () => {
         return groupedRows;
     };
 
+    // Check if a row is active based on the current time and date
     const isRowActive = (date, time) => {
         if (date !== currentDate) return false;
         const [hour, minute] = time.split(':').map(Number);
@@ -86,10 +92,11 @@ const App = () => {
         return current >= eventStart && current < eventStart + 60;
     };
 
+    // Group data for the table
     const groupedData = tableData.length > 1 ? groupRowsByDate(tableData.slice(1)) : [];
 
     return (
-        <div className="App">
+        <div className={`App ${darkMode ? 'dark-mode' : 'light-mode'}`}>
             <Header darkMode={darkMode} toggleTheme={toggleTheme} />
             <main>
                 <p>Welcome to the official website of HOA DAO LION DANCE 2025.</p>
@@ -116,14 +123,17 @@ const App = () => {
                                             {rowIndex === 0 && (
                                                 <td
                                                     rowSpan={group.data.length}
-                                                    className={!isActive && date === currentDate ? 'highlight-date-cell' : ''}
+                                                    className={
+                                                        !isActive && date === currentDate
+                                                            ? 'highlight-date-cell'
+                                                            : ''
+                                                    }
                                                 >
                                                     {group.date}
                                                 </td>
                                             )}
                                             {row.map((cell, cellIndex) => {
                                                 if (cellIndex === 2) {
-                                                    // Copyable Address
                                                     return (
                                                         <td
                                                             key={cellIndex}
@@ -136,7 +146,6 @@ const App = () => {
                                                     );
                                                 }
                                                 if (cellIndex === row.length - 1) {
-                                                    // Navigation Button
                                                     return (
                                                         <td key={cellIndex}>
                                                             <button
